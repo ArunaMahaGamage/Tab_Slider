@@ -1,6 +1,7 @@
 package com.example.aruna.tabs;
 
 import android.net.Uri;
+import android.os.Handler;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
     TabLayout tabLayout;
     List <String> imageURLlist = new ArrayList<>();
+    Handler handler;
+    int value = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,22 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         viewPager.setAdapter(pagerAdapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        viewPager.setCurrentItem(6);
+
+        handler = new Handler();
+        final Runnable r = new Runnable() {
+            public void run() {
+                viewPager.setCurrentItem(value);
+                handler.postDelayed(this, 200);
+                value++;
+                if (value == imageURLlist.size()) {
+                    value = 0;
+                }
+            }
+        };
+
+        handler.postDelayed(r, 1);
+
+//        viewPager.setCurrentItem(6);
 
         /*tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
