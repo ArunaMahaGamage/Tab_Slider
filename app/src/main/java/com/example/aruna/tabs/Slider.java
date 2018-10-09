@@ -15,12 +15,12 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Tab1.OnFragmentInteractionListener} interface
+ * {@link Slider.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Tab1#newInstance} factory method to
+ * Use the {@link Slider#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tab1 extends Fragment {
+public class Slider extends Fragment {
     TextView tab_name;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,7 +33,7 @@ public class Tab1 extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Tab1() {
+    public Slider() {
         // Required empty public constructor
     }
 
@@ -46,8 +46,8 @@ public class Tab1 extends Fragment {
      * @return A new instance of fragment Tab1.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tab1 newInstance(String param1, String param2) {
-        Tab1 fragment = new Tab1();
+    public static Slider newInstance(String param1, String param2) {
+        Slider fragment = new Slider();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

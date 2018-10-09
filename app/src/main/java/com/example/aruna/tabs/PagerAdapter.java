@@ -25,7 +25,7 @@ public class PagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         String url = imageURLlist.get(position);
-        Tab1 tab1 = Tab1.newInstance(url,"");
+        Slider tab1 = Slider.newInstance(url,"");
         return tab1;
     }
 
