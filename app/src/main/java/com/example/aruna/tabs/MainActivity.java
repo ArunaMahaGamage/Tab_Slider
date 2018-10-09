@@ -6,20 +6,36 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentInteractionListener, Tab2.OnFragmentInteractionListener, Tab3.OnFragmentInteractionListener {
 
     TabLayout tabLayout;
+    List <String> imageURLlist = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+        imageURLlist.add("");
+
+
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
 
-        tabLayout.addTab(tabLayout.newTab());
-        tabLayout.addTab(tabLayout.newTab());
-        tabLayout.addTab(tabLayout.newTab());
+        for (int i = 0; i < imageURLlist.size(); i++) {
+            tabLayout.addTab(tabLayout.newTab());
+        }
 
         /*tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
         tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
@@ -28,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(),imageURLlist);
         viewPager.setAdapter(pagerAdapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
