@@ -10,7 +10,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SliderActivity extends AppCompatActivity implements Tab1.OnFragmentInteractionListener, Tab2.OnFragmentInteractionListener, Tab3.OnFragmentInteractionListener {
+public class SliderActivity extends AppCompatActivity implements Tab1.OnFragmentInteractionListener {
 
     TabLayout tabLayout;
     List <String> imageURLlist = new ArrayList<>();
