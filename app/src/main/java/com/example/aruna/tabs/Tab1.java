@@ -11,8 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.zip.Inflater;
-
 
 /**
  * A simple {@link Fragment} subclass.
@@ -70,7 +68,7 @@ public class Tab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tab1, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab_base_slider, container, false);
         tab_name = view.findViewById(R.id.tab_name);
         return view;
     }
