@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         final Runnable r = new Runnable() {
             public void run() {
                 viewPager.setCurrentItem(value);
-                handler.postDelayed(this, 200);
+                handler.postDelayed(this, 1000);
                 value++;
                 if (value == imageURLlist.size()) {
                     value = 0;
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
             }
         };
 
-        handler.postDelayed(r, 1);
+        handler.postDelayed(r, 1000);
 
 //        viewPager.setCurrentItem(6);
 
