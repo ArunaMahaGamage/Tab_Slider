@@ -22,16 +22,16 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
-        imageURLlist.add("");
+        imageURLlist.add("Tab 1");
+        imageURLlist.add("Tab 2");
+        imageURLlist.add("Tab 3");
+        imageURLlist.add("Tab 4");
+        imageURLlist.add("Tab 5");
+        imageURLlist.add("Tab 6");
+        imageURLlist.add("Tab 7");
+        imageURLlist.add("Tab 8");
+        imageURLlist.add("Tab 9");
+        imageURLlist.add("Tab 10");
 
 
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
@@ -39,18 +39,12 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
         for (int i = 0; i < imageURLlist.size(); i++) {
             tabLayout.addTab(tabLayout.newTab());
         }
-
-        /*tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));*/
         tabLayout.setTabGravity(tabLayout.GRAVITY_FILL);
-
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount(),imageURLlist);
         viewPager.setAdapter(pagerAdapter);
         viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
 
         handler = new Handler();
         final Runnable r = new Runnable() {
@@ -66,24 +60,6 @@ public class MainActivity extends AppCompatActivity implements Tab1.OnFragmentIn
 
         handler.postDelayed(r, 1000);
 
-//        viewPager.setCurrentItem(6);
-
-        /*tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });*/
     }
 
     @Override

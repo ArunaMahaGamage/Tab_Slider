@@ -3,10 +3,15 @@ package com.example.aruna.tabs;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import java.util.zip.Inflater;
 
 
 /**
@@ -18,6 +23,7 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class Tab1 extends Fragment {
+    TextView tab_name;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -64,7 +70,16 @@ public class Tab1 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tab1, container, false);
+        View view = inflater.inflate(R.layout.fragment_tab1, container, false);
+        tab_name = view.findViewById(R.id.tab_name);
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        tab_name.setText(mParam1);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
